@@ -20,7 +20,9 @@ class ProductController extends Controller
 
     function search(Request $req){
         $data = Product::
-        where('name', 'like', '%'.$req->input('query').'%')->get();
+        where('name', 'like', '%'.$req->input('query').'%')
+        ->orwhere('description', 'like', '%'.$req->input('query').'%')
+        ->get();
         return view('searchpage', ['products' => $data]);
     }
 
