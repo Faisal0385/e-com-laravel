@@ -23,7 +23,8 @@
                 </div>
             </div>
             @endforeach
-
+            <br><br>
+            <a class="btn btn-sm btn-success" href="/orderNow" >Order Now</a>
         </div>
     </div>
 </div>
