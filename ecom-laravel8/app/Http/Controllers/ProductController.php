@@ -70,7 +70,6 @@ class ProductController extends Controller
     }
 
     public function removeCart($id){
-        //DB::delete('')
         Cart::destroy($id);
         return redirect('cartList');
     }
