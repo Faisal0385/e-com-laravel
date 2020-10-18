@@ -19,7 +19,7 @@
                     <p class="card-text">৳ {{$item->price}}</p>
                 </div>
                 <div class='col-lg-2 col-md-4 col-sm-6 mb-3'>
-                    <a href="detail/{{$item->id}}" class="btn btn-danger btn-sm">Remove</a>
+                    <a href="removecart/{{$item->cart_id}}" class="btn btn-danger btn-sm">Remove</a>
                 </div>
             </div>
             @endforeach
