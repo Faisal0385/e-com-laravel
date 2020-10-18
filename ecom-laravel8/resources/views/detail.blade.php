@@ -28,7 +28,12 @@
                     </tr>                  
                 </tbody>
             </table>
-            <a href="" class="btn btn-danger bnt-sm">Add To Cart</a>
+            <form action="/add_to_cart" method="POST">
+                @csrf
+                <input type="hidden" name="product_id" value={{ $product['id'] }}>
+                <button type="submit" class="btn btn-danger bnt-sm">Add To Cart</button>
+            </form>
+            
         </div>
     </div>
 </div>

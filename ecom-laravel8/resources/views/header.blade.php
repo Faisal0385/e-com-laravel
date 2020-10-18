@@ -1,5 +1,18 @@
+<?php
+
+use App\Http\Controllers\ProductController;
+
+$total = 0;
+
+if (Session::has('user')) {
+    $total = ProductController::cartItem();
+}
+
+
+?>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
-    <a class="navbar-brand" href="#">The Salaams</a>
+    <a class="navbar-brand" href="/">The Salaams</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -11,7 +24,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact Us</a>
-            </li>          
+            </li>
             <li class="nav-item">
                 <form action="/search" class="form-inline mr-2 mr-lg-0">
                     <input class="form-control mr-sm-2" name="query" type="search" placeholder="Search" aria-label="Search">
@@ -20,10 +33,24 @@
         </ul>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="nav-link" href="#">Add To Cart(0)</span></a>
+                <a class="nav-link" href="#">Cart({{$total}})</span></a>
             </li>
+            @if(Session::has('user'))
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{Session::get('user')['name']}}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                </div>
+            </li>
+            @else
+                <li class="nav-item">
+                    <a class="nav-link" href="/loginUI">Login</span></a>
+                </li>
+            @endif
         </ul>
-        
+
 
     </div>
 </nav>
