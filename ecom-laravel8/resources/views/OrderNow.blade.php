@@ -29,17 +29,17 @@
                 </tbody>
             </table>
             <div>
-                <form>
-                
+                <form action="/orderplace" method="post">
+                    @csrf
                     <div class="form-group"> 
                         <label for="exampleInputEmail1"><h5>Address</h5></label>                      
-                        <textarea name="" id="" class="form-control"></textarea>
+                        <textarea name="address" id="" class="form-control"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="exampleInputPassword1"><h5>Payment Method</h5></label><br>
-                        <input type="radio" name="Online"> <span> Online Payment</span><br>
-                        <input type="radio" name="EMI"> <span> EMI Payment</span><br>
-                        <input type="radio" name="COD"> <span> Cash On Delivery</span><br>
+                        <input  type="radio" value="cash" name="payment"> <span> Online Payment</span><br>
+                        <input type="radio" value="cash" name="payment"> <span> EMI Payment</span><br>
+                        <input type="radio" value="cash" name="payment"> <span> Cash On Delivery</span><br>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
