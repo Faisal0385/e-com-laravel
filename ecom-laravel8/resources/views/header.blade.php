@@ -24,7 +24,7 @@ if (Session::has('user')) {
                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Contact Us</a>
+                <a class="nav-link" href="/myorders">Orders</a>
             </li>
             <li class="nav-item">
                 <form action="/search" class="form-inline mr-2 mr-lg-0">
