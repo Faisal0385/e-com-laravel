@@ -43,11 +43,15 @@ if (Session::has('user')) {
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="/logout">Logout</a>
+
                 </div>
             </li>
             @else
                 <li class="nav-item">
                     <a class="nav-link" href="/loginUI">Login</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/register">Register</span></a>
                 </li>
             @endif
         </ul>
